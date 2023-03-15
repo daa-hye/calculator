@@ -8,13 +8,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var number1Button: NumberButton!
+    
+    @IBOutlet weak var outputLabel: UILabel!
+    @IBOutlet var numberButtons: [NumberButton]!
+    @IBAction func numberButtonDidTab(_ sender: UIButton) {
+        if let currentOutput = outputLabel.text {
+            let number = String(sender.tag)
+            outputLabel.text = currentOutput + number
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor.black
+        outputLabel.textColor = UIColor.white
     }
     
 }
+
 
