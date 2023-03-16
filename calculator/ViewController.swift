@@ -14,7 +14,11 @@ class ViewController: UIViewController {
     @IBAction func numberButtonDidTab(_ sender: UIButton) {
         if let currentOutput = outputLabel.text {
             let number = String(sender.tag)
-            outputLabel.text = currentOutput + number
+            if outputLabel.text == "0"{
+                outputLabel.text = number
+            }else{
+                outputLabel.text = currentOutput + number
+            }
         }
     }
     
@@ -23,6 +27,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor.black
         outputLabel.textColor = UIColor.white
+        outputLabel.text = "0"
     }
     
 }

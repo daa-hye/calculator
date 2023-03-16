@@ -152,7 +152,7 @@
                                                     <color key="titleColor" red="0.99863873110000001" green="0.99863873110000001" blue="0.99863873110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="numberButtonDidTab:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="P4F-Cr-n2h"/>
+                                                    <action selector="numberButtonDidTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cM4-nY-mRN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sml-kH-0hF" customClass="NumberButton" customModule="calculator" customModuleProvider="target">
@@ -194,7 +194,7 @@
                                                     <color key="titleColor" red="0.99863873110000001" green="0.99863873110000001" blue="0.99863873110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="NumberButtonDidTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EvJ-r8-QkP"/>
+                                                    <action selector="numberButtonDidTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="alO-GE-KZ0"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0a-bo-932" customClass="NumberButton" customModule="calculator" customModuleProvider="target">
@@ -217,7 +217,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstItem="4ZG-j8-alW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.966073" id="AXJ-MH-P60"/>
                             <constraint firstItem="4ZG-j8-alW" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="1:2" id="Ft2-MS-NGt"/>
@@ -247,9 +247,6 @@
     <resources>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
