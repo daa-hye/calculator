@@ -21,6 +21,7 @@ class OperatorButton: UIButton {
         clipsToBounds = true
         backgroundColor = UIColor(red: 255.0/255.0, green: 159.0/255.0, blue: 10.0/255.0, alpha: 1)
         setTitleColor(.white, for: .normal)
+        titleLabel?.font = UIFont.systemFont(ofSize: 40, weight: .semibold)
     }
     
     override func layoutSubviews() {

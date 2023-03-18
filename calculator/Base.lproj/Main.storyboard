@@ -16,41 +16,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4ZG-j8-alW">
-                                <rect key="frame" x="0.0" y="618.33333333333337" width="379.66666666666669" height="200"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4ZG-j8-alW">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WH-0j-PhD">
-                                        <rect key="frame" x="0.0" y="0.0" width="379.66666666666669" height="50"/>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="500" verticalHuggingPriority="500" verticalCompressionResistancePriority="700" translatesAutoresizingMaskIntoConstraints="NO" id="Dng-kh-7tN">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" text="123123123" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WH-0j-PhD">
+                                        <rect key="frame" x="0.0" y="69.999999999999986" width="393" height="172.66666666666663"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0Hc-Wi-sxG">
-                                        <rect key="frame" x="0.0" y="50" width="379.66666666666669" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0Hc-Wi-sxG">
+                                        <rect key="frame" x="0.0" y="262.66666666666669" width="393" height="83.333333333333314"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpa-ul-cci" customClass="UtilityButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="274.66666666666669" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpa-ul-cci" customClass="UtilityButton" customModule="calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="83.333333333333329" height="83.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="bpa-ul-cci" secondAttribute="height" id="3Rg-3d-Pmu"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="AC">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkM-DW-me3" customClass="UtilityButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="279.66666666666669" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="103.33333333333334" y="0.0" width="83.333333333333343" height="83.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="jkM-DW-me3" secondAttribute="height" id="ShA-m9-bd2"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="+ / -">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSv-g9-z44" customClass="UtilityButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="314.66666666666669" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="206.66666666666666" y="0.0" width="82.999999999999972" height="83.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="pSv-g9-z44" secondAttribute="height" id="u93-Wf-wcJ"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="%">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjL-5A-BL2" customClass="OperatorButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="349.66666666666669" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="309.66666666666669" y="0.0" width="83.333333333333314" height="83.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="MjL-5A-BL2" secondAttribute="height" id="Cvf-zG-28i"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="÷">
                                                     <color key="titleColor" red="0.99863873110000001" green="0.99863873110000001" blue="0.99863873110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -58,11 +73,14 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mbb-0z-Rvm">
-                                        <rect key="frame" x="0.0" y="80" width="379.66666666666669" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mbb-0z-Rvm">
+                                        <rect key="frame" x="0.0" y="366" width="393" height="83.333333333333314"/>
                                         <subviews>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prd-SO-Nso" customClass="NumberButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="83.333333333333329" height="83.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="prd-SO-Nso" secondAttribute="height" id="J8q-Ba-CFW"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="7">
                                                     <color key="titleColor" red="0.99863873110000001" green="0.99863873110000001" blue="0.99863873110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -72,7 +90,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWR-0U-tw7" customClass="NumberButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="35" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="103.33333333333334" y="0.0" width="83.333333333333343" height="83.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="VWR-0U-tw7" secondAttribute="height" id="fmF-in-B2G"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="8">
                                                     <color key="titleColor" red="0.99863873110000001" green="0.99863873110000001" blue="0.99863873110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -82,7 +103,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7P-IF-xg5" customClass="NumberButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="70" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="206.66666666666666" y="0.0" width="82.999999999999972" height="83.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="H7P-IF-xg5" secondAttribute="height" id="KRs-HU-uSU"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="9">
                                                     <color key="titleColor" red="0.99863873110000001" green="0.99863873110000001" blue="0.99863873110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -91,8 +115,11 @@
                                                     <action selector="numberButtonDidTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S4L-pw-CgP"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFL-3D-6Y8" customClass="OperatorButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="105" y="0.0" width="274.66666666666669" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFL-3D-6Y8" customClass="OperatorButton" customModule="calculator" customModuleProvider="target">
+                                                <rect key="frame" x="309.66666666666669" y="0.0" width="83.333333333333314" height="83.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="HFL-3D-6Y8" secondAttribute="height" id="b3v-ao-vnI"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="×">
                                                     <color key="titleColor" red="0.99863873110000001" green="0.99863873110000001" blue="0.99863873110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -100,11 +127,14 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yp6-yD-kqp">
-                                        <rect key="frame" x="0.0" y="110" width="379.66666666666669" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yp6-yD-kqp">
+                                        <rect key="frame" x="0.0" y="469.33333333333337" width="393" height="83.333333333333371"/>
                                         <subviews>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRo-m9-t10" customClass="NumberButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="83.333333333333329" height="83.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="aRo-m9-t10" secondAttribute="height" id="CKz-Gr-38s"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="4">
                                                     <color key="titleColor" red="0.99863873110000001" green="0.99863873110000001" blue="0.99863873110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -114,7 +144,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gU1-h6-XaR" customClass="NumberButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="35" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="103.33333333333334" y="0.0" width="83.333333333333343" height="83.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="gU1-h6-XaR" secondAttribute="height" id="6DB-0L-smV"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="5">
                                                     <color key="titleColor" red="0.99863873110000001" green="0.99863873110000001" blue="0.99863873110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -124,7 +157,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sN-QO-CeD" customClass="NumberButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="70" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="206.66666666666666" y="0.0" width="82.999999999999972" height="83.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="9sN-QO-CeD" secondAttribute="height" id="vbL-q3-kzm"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="6">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -133,8 +169,11 @@
                                                     <action selector="numberButtonDidTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WwB-La-RBp"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8j-zy-l7J" customClass="OperatorButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="105" y="0.0" width="274.66666666666669" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8j-zy-l7J" customClass="OperatorButton" customModule="calculator" customModuleProvider="target">
+                                                <rect key="frame" x="309.66666666666669" y="0.0" width="83.333333333333314" height="83.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="t8j-zy-l7J" secondAttribute="height" id="3PP-ZP-Ljh"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="-">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -142,11 +181,14 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eAG-Fs-VyR">
-                                        <rect key="frame" x="0.0" y="140" width="379.66666666666669" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eAG-Fs-VyR">
+                                        <rect key="frame" x="0.0" y="572.66666666666663" width="393" height="83"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rv1-3P-Nw9" customClass="NumberButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="83.333333333333329" height="83"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="rv1-3P-Nw9" secondAttribute="height" id="2Pv-dR-uHG"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="1">
                                                     <color key="titleColor" red="0.99863873110000001" green="0.99863873110000001" blue="0.99863873110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -156,7 +198,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sml-kH-0hF" customClass="NumberButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="35" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="103.33333333333334" y="0.0" width="83.333333333333343" height="83"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="sml-kH-0hF" secondAttribute="height" id="f93-HX-6gc"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="2">
                                                     <color key="titleColor" red="0.99863873110000001" green="0.99863873110000001" blue="0.99863873110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -166,7 +211,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnA-bZ-zKr" customClass="NumberButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="70" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="206.66666666666666" y="0.0" width="82.999999999999972" height="83"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="JnA-bZ-zKr" secondAttribute="height" id="iDW-DU-2wH"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="3">
                                                     <color key="titleColor" red="0.99863873110000001" green="0.99863873110000001" blue="0.99863873110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -175,8 +223,11 @@
                                                     <action selector="numberButtonDidTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x8a-OK-Msa"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhe-RI-zT4" customClass="OperatorButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="105" y="0.0" width="274.66666666666669" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhe-RI-zT4" customClass="OperatorButton" customModule="calculator" customModuleProvider="target">
+                                                <rect key="frame" x="309.66666666666669" y="0.0" width="83.333333333333314" height="83"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="vhe-RI-zT4" secondAttribute="height" id="4H5-Eu-YLp"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="+">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -184,11 +235,11 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8O9-hK-o53">
-                                        <rect key="frame" x="0.0" y="170" width="379.66666666666669" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8O9-hK-o53">
+                                        <rect key="frame" x="0.0" y="675.66666666666663" width="393" height="83.333333333333371"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgf-Da-QCV" customClass="NumberButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="309.66666666666669" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="186.66666666666666" height="83.333333333333329"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="0">
                                                     <color key="titleColor" red="0.99863873110000001" green="0.99863873110000001" blue="0.99863873110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -198,14 +249,20 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0a-bo-932" customClass="NumberButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="314.66666666666669" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="206.66666666666666" y="0.0" width="82.999999999999972" height="83.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="i0a-bo-932" secondAttribute="height" id="cz1-ee-QfS"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title=".">
                                                     <color key="titleColor" red="0.99863873110000001" green="0.99863873110000001" blue="0.99863873110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00s-ia-j1d" customClass="OperatorButton" customModule="calculator" customModuleProvider="target">
-                                                <rect key="frame" x="349.66666666666669" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="309.66666666666669" y="0.0" width="83.333333333333314" height="83.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="00s-ia-j1d" secondAttribute="height" id="zkI-7N-434"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="=">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -214,15 +271,18 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="00s-ia-j1d" firstAttribute="width" secondItem="vhe-RI-zT4" secondAttribute="width" id="x1f-lv-DMy"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstItem="4ZG-j8-alW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.966073" id="AXJ-MH-P60"/>
-                            <constraint firstItem="4ZG-j8-alW" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="1:2" id="Ft2-MS-NGt"/>
-                            <constraint firstItem="4ZG-j8-alW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="P37-MI-jhh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4ZG-j8-alW" secondAttribute="bottom" id="wVR-TK-lZz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4ZG-j8-alW" secondAttribute="trailing" id="FFD-tN-fyd"/>
+                            <constraint firstItem="4ZG-j8-alW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="V0p-TE-0tn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4ZG-j8-alW" secondAttribute="bottom" id="gXF-ZF-698"/>
+                            <constraint firstItem="4ZG-j8-alW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nal-sH-Pcx"/>
                         </constraints>
                     </view>
                     <connections>

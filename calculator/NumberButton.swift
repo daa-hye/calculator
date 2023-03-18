@@ -21,6 +21,7 @@ class NumberButton: UIButton {
         clipsToBounds = true
         backgroundColor = UIColor(red: 51.0/255.0, green: 51.0/255.0, blue: 51.0/255.0, alpha: 1)
         setTitleColor(.white, for: .normal)
+        titleLabel?.font = UIFont.systemFont(ofSize: 35, weight: .semibold)
     }
     
     override func layoutSubviews() {

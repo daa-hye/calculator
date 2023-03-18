@@ -20,7 +20,8 @@ class UtilityButton: UIButton {
         super.init(coder: aDecoder)
         clipsToBounds = true
         backgroundColor = UIColor(red: 165.0/255.0, green: 165.0/255.0, blue: 165.0/255.0, alpha: 1)
-        setTitleColor(.white, for: .normal)
+        setTitleColor(.black, for: .normal)
+        titleLabel?.font = UIFont.systemFont(ofSize: 35)
     }
     
     override func layoutSubviews() {

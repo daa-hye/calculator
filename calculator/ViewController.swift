@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor.black
         outputLabel.textColor = UIColor.white
+        outputLabel.font = UIFont.systemFont(ofSize: 70)
         outputLabel.text = "0"
     }
     
