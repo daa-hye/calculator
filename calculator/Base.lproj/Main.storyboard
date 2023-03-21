@@ -70,7 +70,7 @@
                                                     <action selector="percentButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xla-Wb-PzO"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjL-5A-BL2" customClass="OperatorButton" customModule="calculator" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjL-5A-BL2" customClass="OperatorButton" customModule="calculator" customModuleProvider="target">
                                                 <rect key="frame" x="309.66666666666669" y="0.0" width="83.333333333333314" height="83.333333333333329"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="MjL-5A-BL2" secondAttribute="height" id="Cvf-zG-28i"/>
@@ -79,6 +79,7 @@
                                                 <state key="normal" title="÷">
                                                     <color key="titleColor" red="0.99863873110000001" green="0.99863873110000001" blue="0.99863873110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <state key="selected" title="÷"/>
                                                 <connections>
                                                     <action selector="devideButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fmm-Ae-Car"/>
                                                 </connections>
@@ -127,7 +128,7 @@
                                                     <action selector="numberButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7vB-LN-9Ma"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFL-3D-6Y8" customClass="OperatorButton" customModule="calculator" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFL-3D-6Y8" customClass="OperatorButton" customModule="calculator" customModuleProvider="target">
                                                 <rect key="frame" x="309.66666666666669" y="0.0" width="83.333333333333314" height="83.333333333333329"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="HFL-3D-6Y8" secondAttribute="height" id="b3v-ao-vnI"/>
@@ -184,7 +185,7 @@
                                                     <action selector="numberButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zg6-Jp-Rav"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8j-zy-l7J" customClass="OperatorButton" customModule="calculator" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8j-zy-l7J" customClass="OperatorButton" customModule="calculator" customModuleProvider="target">
                                                 <rect key="frame" x="309.66666666666669" y="0.0" width="83.333333333333314" height="83.333333333333329"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="t8j-zy-l7J" secondAttribute="height" id="3PP-ZP-Ljh"/>
@@ -241,7 +242,7 @@
                                                     <action selector="numberButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xJe-3x-Wvi"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhe-RI-zT4" customClass="OperatorButton" customModule="calculator" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhe-RI-zT4" customClass="OperatorButton" customModule="calculator" customModuleProvider="target">
                                                 <rect key="frame" x="309.66666666666669" y="0.0" width="83.333333333333314" height="83"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="vhe-RI-zT4" secondAttribute="height" id="4H5-Eu-YLp"/>
@@ -282,7 +283,7 @@
                                                     <action selector="pointButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uCP-m5-pFk"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00s-ia-j1d" customClass="OperatorButton" customModule="calculator" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00s-ia-j1d" customClass="OperatorButton" customModule="calculator" customModuleProvider="target">
                                                 <rect key="frame" x="309.66666666666669" y="0.0" width="83.333333333333314" height="83.333333333333329"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="00s-ia-j1d" secondAttribute="height" id="zkI-7N-434"/>
@@ -313,7 +314,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="clearButton" destination="bpa-ul-cci" id="TC1-N3-Lpx"/>
+                        <outlet property="devideButton" destination="MjL-5A-BL2" id="Nxb-CQ-ph1"/>
+                        <outlet property="equalButton" destination="00s-ia-j1d" id="bw8-KF-Fw7"/>
+                        <outlet property="minusButton" destination="t8j-zy-l7J" id="0Gd-v2-IZA"/>
+                        <outlet property="multipleButton" destination="HFL-3D-6Y8" id="fAp-Ng-BSH"/>
                         <outlet property="outputLabel" destination="6WH-0j-PhD" id="9oA-U1-eGq"/>
+                        <outlet property="plusButton" destination="vhe-RI-zT4" id="3DK-iY-EAB"/>
                         <outletCollection property="numberButtons" destination="Dgf-Da-QCV" collectionClass="NSMutableArray" id="qDw-IA-m5f"/>
                         <outletCollection property="numberButtons" destination="rv1-3P-Nw9" collectionClass="NSMutableArray" id="cOa-2k-eoT"/>
                         <outletCollection property="numberButtons" destination="sml-kH-0hF" collectionClass="NSMutableArray" id="LNo-lj-K0w"/>

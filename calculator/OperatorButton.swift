@@ -12,7 +12,14 @@ class OperatorButton: UIButton {
     
     override var isHighlighted: Bool {
         didSet {
-            backgroundColor = isHighlighted ? UIColor(red: 251.0/255.0, green: 199.0/255.0, blue: 141.0/255.0, alpha: 1) : UIColor(red: 255.0/255.0, green: 159.0/255.0, blue: 10.0/255.0, alpha: 1)
+            backgroundColor = isHighlighted ? UIColor(red: 251.0/255.0, green: 199.0/255.0, blue: 141.0/255.0, alpha: 1) : UIColor.white
+        }
+    }
+    
+    override var isSelected: Bool {
+        didSet {
+            backgroundColor = isSelected ? UIColor.white : UIColor(red: 255.0/255.0, green: 159.0/255.0, blue: 10.0/255.0, alpha: 1)
+            setTitleColor(UIColor(red: 255.0/255.0, green: 159.0/255.0, blue: 10.0/255.0, alpha: 1), for: .selected)
         }
     }
     
