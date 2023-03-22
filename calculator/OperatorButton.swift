@@ -12,7 +12,7 @@ class OperatorButton: UIButton {
     
     override var isHighlighted: Bool {
         didSet {
-            backgroundColor = isHighlighted ? UIColor(red: 251.0/255.0, green: 199.0/255.0, blue: 141.0/255.0, alpha: 1) : UIColor.white
+            backgroundColor = isHighlighted ? UIColor(red: 251.0/255.0, green: 199.0/255.0, blue: 141.0/255.0, alpha: 1) : (isSelected ? UIColor.white : UIColor(red: 255.0/255.0, green: 159.0/255.0, blue: 10.0/255.0, alpha: 1))
         }
     }
     

@@ -78,40 +78,51 @@ class ViewController: UIViewController {
     }
     @IBAction func plusButtonDidTap(_ sender: UIButton) {
         if let currentOutput = outputLabel.text {
-            calculatorStack.push(element: currentOutput)
+            if checkElementDuplication(element: currentOutput){
+                calculatorStack.push(element: currentOutput)
+            }
             clearOperator()
             sender.isSelected = true
         }
     }
     @IBAction func minusButtonDidTap(_ sender: UIButton) {
         if let currentOutput = outputLabel.text {
-            calculatorStack.push(element: currentOutput)
+            if checkElementDuplication(element: currentOutput){
+                calculatorStack.push(element: currentOutput)
+            }
             clearOperator()
             sender.isSelected = true
         }
     }
     @IBAction func multipleButtonDidTap(_ sender: UIButton) {
         if let currentOutput = outputLabel.text {
-            calculatorStack.push(element: currentOutput)
+            if checkElementDuplication(element: currentOutput){
+                calculatorStack.push(element: currentOutput)
+            }
             clearOperator()
             sender.isSelected = true
         }
     }
     @IBAction func devideButtonDidTap(_ sender: UIButton) {
         if let currentOutput = outputLabel.text {
-            calculatorStack.push(element: currentOutput)
+            if checkElementDuplication(element: currentOutput){
+                calculatorStack.push(element: currentOutput)
+            }
             clearOperator()
             sender.isSelected = true
         }
     }
     @IBAction func equalButtonDidTap(_ sender: UIButton) {
+        equalButton.isSelected = false
+        print(equalButton.isSelected)
         
     }
     @IBAction func numberButtonDidTap(_ sender: UIButton) {
         if let currentOutput = outputLabel.text {
             let number = String(sender.tag)
-            if isOperatorSelected() {
+            if let op = whichOperatorSelected() {
                 outputLabel.text = number
+                calculatorStack.push(element: op)
                 clearOperator()
             } else {
                 if outputLabel.text == "0" {
@@ -131,9 +142,16 @@ class ViewController: UIViewController {
         devideButton.isSelected = false
     }
     
-    func isOperatorSelected() -> Bool {
-        return plusButton.isSelected || minusButton.isSelected || multipleButton.isSelected || devideButton.isSelected
-        
+    func whichOperatorSelected() -> String? {
+        if plusButton.isSelected { return "+" }
+        else if minusButton.isSelected { return "-" }
+        else if multipleButton.isSelected { return "*" }
+        else if devideButton.isSelected { return "/" }
+        else { return nil }
+    }
+    
+    func checkElementDuplication(element: String) -> Bool {
+        return calculatorStack.isEmpty() || element != calculatorStack.lastElement()
     }
     
     override func viewDidLoad() {

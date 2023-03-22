@@ -24,12 +24,23 @@ class CalculatorModel {
             return last == "+" || last == "-" || last == "*" || last == "/"
         }
         
+        func lastElement() -> String? {
+            if let last = stack.last{
+                return last
+            }
+            return nil
+        }
+        
         func isEmpty() -> Bool {
             return stack.isEmpty
         }
         
-        mutating func clearAll(){
+        mutating func clearAll() {
             stack.removeAll()
+        }
+        
+        mutating func calaulateAll() {
+
         }
             
         var count: Int {
