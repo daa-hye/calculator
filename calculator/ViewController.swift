@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var calculatorStack = CalculatorModel.CalculatorStack()
+    var calculatorStackCopy = CalculatorModel.CalculatorStack()
     
     @IBOutlet weak var outputLabel: UILabel!
     @IBOutlet var numberButtons: [NumberButton]!
@@ -39,17 +40,17 @@ class ViewController: UIViewController {
             devideButton.setTitle("÷", for: .normal)
         }
     }
-    @IBOutlet weak var equalButton: OperatorButton!{
-        didSet{
-            
-        }
-    }
+    @IBOutlet weak var equalButton: OperatorButton!
+    
     @IBAction func claerButtonDidTap(_ sender: UIButton) {
         if clearButton.titleLabel?.text == "C" {
             outputLabel.text = "0"
-            calculatorStack.clearAll()
+            if let op = calculatorStack.pop() {
+                reloadOperator(op: op)
+            }
             clearButton.setTitle("AC", for: .normal)
         } else if clearButton.titleLabel?.text == "AC" {
+            calculatorStack.clearAll()
             clearOperator()
         }
     }
@@ -78,43 +79,43 @@ class ViewController: UIViewController {
     }
     @IBAction func plusButtonDidTap(_ sender: UIButton) {
         if let currentOutput = outputLabel.text {
-            if checkElementDuplication(element: currentOutput){
+            if whichOperatorSelected() == nil {
                 calculatorStack.push(element: currentOutput)
+                clearOperator()
             }
-            clearOperator()
             sender.isSelected = true
         }
     }
     @IBAction func minusButtonDidTap(_ sender: UIButton) {
         if let currentOutput = outputLabel.text {
-            if checkElementDuplication(element: currentOutput){
+            if whichOperatorSelected() == nil {
                 calculatorStack.push(element: currentOutput)
+                clearOperator()
             }
-            clearOperator()
             sender.isSelected = true
         }
     }
     @IBAction func multipleButtonDidTap(_ sender: UIButton) {
         if let currentOutput = outputLabel.text {
-            if checkElementDuplication(element: currentOutput){
+            if whichOperatorSelected() == nil {
                 calculatorStack.push(element: currentOutput)
+                clearOperator()
             }
-            clearOperator()
             sender.isSelected = true
         }
     }
     @IBAction func devideButtonDidTap(_ sender: UIButton) {
         if let currentOutput = outputLabel.text {
-            if checkElementDuplication(element: currentOutput){
+            if whichOperatorSelected() == nil {
                 calculatorStack.push(element: currentOutput)
+                clearOperator()
             }
-            clearOperator()
             sender.isSelected = true
         }
     }
     @IBAction func equalButtonDidTap(_ sender: UIButton) {
         equalButton.isSelected = false
-        print(equalButton.isSelected)
+        print(calculatorStack)
         
     }
     @IBAction func numberButtonDidTap(_ sender: UIButton) {
@@ -127,6 +128,8 @@ class ViewController: UIViewController {
             } else {
                 if outputLabel.text == "0" {
                     outputLabel.text = number
+                } else if outputLabel.text == "-0" {
+                    outputLabel.text = "-\(number)"
                 } else {
                     outputLabel.text = currentOutput + number
                 }
@@ -148,6 +151,17 @@ class ViewController: UIViewController {
         else if multipleButton.isSelected { return "*" }
         else if devideButton.isSelected { return "/" }
         else { return nil }
+    }
+    
+    func reloadOperator(op: String) {
+        if op == "+" {
+            plusButton.isSelected = true
+            print(plusButton.isSelected)
+        }
+        else if op == "-" { minusButton.isSelected = true}
+        else if op == "*" { multipleButton.isSelected = true}
+        else if op == "/" { devideButton.isSelected = true}
+        else {}
     }
     
     func checkElementDuplication(element: String) -> Bool {
