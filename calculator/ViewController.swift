@@ -114,15 +114,26 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func equalButtonDidTap(_ sender: UIButton) {
-        equalButton.isSelected = false
         print(calculatorStack)
-        
+        equalButton.isSelected = false
+        if let currentOutput = outputLabel.text {
+            if whichOperatorSelected() == nil {
+                calculatorStack.push(element: currentOutput)
+                clearOperator()
+            }
+        }
+        if calculatorStack.count > 1 {
+            calculatorStack.calaulateAll()
+        }
+        if let answer = calculatorStack.pop(){
+            setOutputLabel(text: answer)
+        }
     }
     @IBAction func numberButtonDidTap(_ sender: UIButton) {
         if let currentOutput = outputLabel.text {
             let number = String(sender.tag)
             if let op = whichOperatorSelected() {
-                outputLabel.text = number
+                setOutputLabel(text: number)
                 calculatorStack.push(element: op)
                 clearOperator()
             } else {
@@ -164,8 +175,10 @@ class ViewController: UIViewController {
         else {}
     }
     
-    func checkElementDuplication(element: String) -> Bool {
-        return calculatorStack.isEmpty() || element != calculatorStack.lastElement()
+    func setOutputLabel(text: String) {
+        guard let value = Double(text) else { return }
+        
+        outputLabel.text = value.isInteger ? "\(Int(value))" : "\(value)"
     }
     
     override func viewDidLoad() {
