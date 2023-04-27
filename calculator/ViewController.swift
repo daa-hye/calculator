@@ -9,9 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var calculatorStack = CalculatorModel.CalculatorStack()
-    var calculatorStackCopy = CalculatorModel.CalculatorStack()
-    
+    let calculatorModel = CalculatorModel()
+
     @IBOutlet weak var outputLabel: UILabel!
     @IBOutlet var numberButtons: [NumberButton]!
     @IBOutlet weak var clearButton: UtilityButton!
@@ -45,12 +44,12 @@ class ViewController: UIViewController {
     @IBAction func claerButtonDidTap(_ sender: UIButton) {
         if clearButton.titleLabel?.text == "C" {
             outputLabel.text = "0"
-            if let op = calculatorStack.pop() {
+            if let op = calculatorModel.showOperator() {
                 reloadOperator(op: op)
             }
             clearButton.setTitle("AC", for: .normal)
         } else if clearButton.titleLabel?.text == "AC" {
-            calculatorStack.clearAll()
+            calculatorModel.deleteAll()
             clearOperator()
         }
     }
@@ -78,55 +77,60 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func plusButtonDidTap(_ sender: UIButton) {
+        sender.isSelected = true
         if let currentOutput = outputLabel.text {
             if whichOperatorSelected() == nil {
-                calculatorStack.push(element: currentOutput)
+                calculatorModel.addElement(currentOutput)
                 clearOperator()
             }
-            sender.isSelected = true
+            if calculatorModel.numberCount > 1{
+                calculatorModel.calaulate()
+            }
         }
     }
     @IBAction func minusButtonDidTap(_ sender: UIButton) {
+        sender.isSelected = true
         if let currentOutput = outputLabel.text {
             if whichOperatorSelected() == nil {
-                calculatorStack.push(element: currentOutput)
+                calculatorModel.addElement(currentOutput)
                 clearOperator()
             }
-            sender.isSelected = true
+            if calculatorModel.numberCount > 1{
+                calculatorModel.calaulate()
+            }
         }
     }
     @IBAction func multipleButtonDidTap(_ sender: UIButton) {
+        sender.isSelected = true
         if let currentOutput = outputLabel.text {
             if whichOperatorSelected() == nil {
-                calculatorStack.push(element: currentOutput)
+                calculatorModel.addElement(currentOutput)
                 clearOperator()
             }
-            sender.isSelected = true
         }
     }
     @IBAction func devideButtonDidTap(_ sender: UIButton) {
+        sender.isSelected = true
         if let currentOutput = outputLabel.text {
             if whichOperatorSelected() == nil {
-                calculatorStack.push(element: currentOutput)
+                calculatorModel.addElement(currentOutput)
                 clearOperator()
             }
-            sender.isSelected = true
         }
     }
     @IBAction func equalButtonDidTap(_ sender: UIButton) {
-        print(calculatorStack)
         equalButton.isSelected = false
         if let currentOutput = outputLabel.text {
             if whichOperatorSelected() == nil {
-                calculatorStack.push(element: currentOutput)
+                calculatorModel.addElement(currentOutput)
                 clearOperator()
             }
         }
-        if calculatorStack.count > 1 {
-            calculatorStack.calaulateAll()
+        if calculatorModel.numberCount > 1 {
+            calculatorModel.calaulateAll()
         }
-        if let answer = calculatorStack.pop(){
-            setOutputLabel(text: answer)
+        if let answer = calculatorModel.showNumber() {
+            setOutputLabel(text: String(answer))
         }
     }
     @IBAction func numberButtonDidTap(_ sender: UIButton) {
@@ -134,7 +138,7 @@ class ViewController: UIViewController {
             let number = String(sender.tag)
             if let op = whichOperatorSelected() {
                 setOutputLabel(text: number)
-                calculatorStack.push(element: op)
+                calculatorModel.addElement(op)
                 clearOperator()
             } else {
                 if outputLabel.text == "0" {
@@ -184,7 +188,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        calculatorStack = CalculatorModel.CalculatorStack()
         
         view.backgroundColor = UIColor.black
         outputLabel.textColor = UIColor.white

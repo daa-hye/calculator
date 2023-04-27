@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5332215929DC0FB100746131 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5332215829DC0FB100746131 /* Stack.swift */; };
+		5332215B29DD45CF00746131 /* String+extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5332215A29DD45CF00746131 /* String+extention.swift */; };
 		53D68E3D29C5D8F90058521B /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D68E3C29C5D8F90058521B /* CalculatorModel.swift */; };
 		53D68E3F29C83BAD0058521B /* Double+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D68E3E29C83BAD0058521B /* Double+extension.swift */; };
 		53D806D529C02CE8002B02A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D806D429C02CE8002B02A2 /* AppDelegate.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5332215829DC0FB100746131 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		5332215A29DD45CF00746131 /* String+extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extention.swift"; sourceTree = "<group>"; };
 		53D68E3C29C5D8F90058521B /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
 		53D68E3E29C83BAD0058521B /* Double+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+extension.swift"; sourceTree = "<group>"; };
 		53D806D129C02CE8002B02A2 /* calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,10 +74,12 @@
 				53D806D629C02CE8002B02A2 /* SceneDelegate.swift */,
 				53D806D829C02CE8002B02A2 /* ViewController.swift */,
 				53D68E3E29C83BAD0058521B /* Double+extension.swift */,
+				5332215A29DD45CF00746131 /* String+extention.swift */,
 				53D68E3C29C5D8F90058521B /* CalculatorModel.swift */,
 				53D806EA29C0326B002B02A2 /* NumberButton.swift */,
 				53D806EC29C05540002B02A2 /* OperatorButton.swift */,
 				53D806EE29C05A2E002B02A2 /* UtilityButton.swift */,
+				5332215829DC0FB100746131 /* Stack.swift */,
 				53D806DA29C02CE8002B02A2 /* Main.storyboard */,
 				53D806DD29C02CE9002B02A2 /* Assets.xcassets */,
 				53D806DF29C02CE9002B02A2 /* LaunchScreen.storyboard */,
@@ -158,6 +164,8 @@
 				53D806D929C02CE8002B02A2 /* ViewController.swift in Sources */,
 				53D806D529C02CE8002B02A2 /* AppDelegate.swift in Sources */,
 				53D68E3F29C83BAD0058521B /* Double+extension.swift in Sources */,
+				5332215B29DD45CF00746131 /* String+extention.swift in Sources */,
+				5332215929DC0FB100746131 /* Stack.swift in Sources */,
 				53D806EB29C0326B002B02A2 /* NumberButton.swift in Sources */,
 				53D806D729C02CE8002B02A2 /* SceneDelegate.swift in Sources */,
 				53D68E3D29C5D8F90058521B /* CalculatorModel.swift in Sources */,
