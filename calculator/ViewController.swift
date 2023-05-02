@@ -77,60 +77,72 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func plusButtonDidTap(_ sender: UIButton) {
-        sender.isSelected = true
         if let currentOutput = outputLabel.text {
             if whichOperatorSelected() == nil {
                 calculatorModel.addElement(currentOutput)
-                clearOperator()
             }
-            if calculatorModel.numberCount > 1{
-                calculatorModel.calaulate()
+            if calculatorModel.numberOperator > 0 {
+                guard let preCalculation = calculatorModel.calaulateAll() else { return }
+                setOutputLabel(text: preCalculation)
             }
         }
+        clearOperator()
+        sender.isSelected = true
     }
     @IBAction func minusButtonDidTap(_ sender: UIButton) {
-        sender.isSelected = true
         if let currentOutput = outputLabel.text {
             if whichOperatorSelected() == nil {
                 calculatorModel.addElement(currentOutput)
-                clearOperator()
             }
-            if calculatorModel.numberCount > 1{
-                calculatorModel.calaulate()
+            if calculatorModel.numberOperator > 0 {
+                guard let preCalculation = calculatorModel.calaulateAll() else { return }
+                setOutputLabel(text: preCalculation)
             }
         }
+        clearOperator()
+        sender.isSelected = true
     }
     @IBAction func multipleButtonDidTap(_ sender: UIButton) {
-        sender.isSelected = true
         if let currentOutput = outputLabel.text {
             if whichOperatorSelected() == nil {
                 calculatorModel.addElement(currentOutput)
-                clearOperator()
+            }
+            if calculatorModel.numberOperator > 0 {
+                if ["*", "/"].contains(calculatorModel.showOperator()){
+                    guard let preCalculation = calculatorModel.calaulateAll() else { return }
+                    setOutputLabel(text: preCalculation)
+                }
             }
         }
+        clearOperator()
+        sender.isSelected = true
     }
     @IBAction func devideButtonDidTap(_ sender: UIButton) {
-        sender.isSelected = true
         if let currentOutput = outputLabel.text {
             if whichOperatorSelected() == nil {
                 calculatorModel.addElement(currentOutput)
-                clearOperator()
+            }
+            if calculatorModel.numberOperator > 0 {
+                if ["*", "/"].contains(calculatorModel.showOperator()){
+                    guard let preCalculation = calculatorModel.calaulateAll() else { return }
+                    setOutputLabel(text: preCalculation)
+                }
             }
         }
+        clearOperator()
+        sender.isSelected = true
     }
     @IBAction func equalButtonDidTap(_ sender: UIButton) {
         equalButton.isSelected = false
         if let currentOutput = outputLabel.text {
             if whichOperatorSelected() == nil {
                 calculatorModel.addElement(currentOutput)
-                clearOperator()
             }
+            clearOperator()
         }
-        if calculatorModel.numberCount > 1 {
-            calculatorModel.calaulateAll()
-        }
-        if let answer = calculatorModel.showNumber() {
-            setOutputLabel(text: String(answer))
+        if calculatorModel.numberOperator > 0 {
+            guard let calculation = calculatorModel.calaulateAll() else { return }
+            setOutputLabel(text: calculation)
         }
     }
     @IBAction func numberButtonDidTap(_ sender: UIButton) {
