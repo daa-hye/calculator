@@ -9,16 +9,34 @@ import Foundation
 
 class CalculatorModel {
     
+    private var buffer = [String]()
     private var numberStack = Stack<Double>()
     private var operatorStack = Stack<String>()
     
+    var operatorAdded: Bool = false
+    
+    func appendNumber(_ element: String) {
+        buffer.append(element)
+    }
+    
+    func showNumber() -> String {
+        return buffer.reduce("", { $0.appending($1) })
+    }
+        
+    func clearBuffer() {
+            buffer.removeAll()
+    }
+    
+    func addElement() {
+        guard let element = Double(showNumber()) else { return }
+        numberStack.push(element)
+        operatorAdded = false
+        
+    }
+    
     func addElement(_ element: String) {
-        if element.isDouble{
-            numberStack.push(Double(element)!)
-        }
-        else {
-            operatorStack.push(element)
-        }
+        operatorStack.push(element)
+        operatorAdded = true
     }
     
     func showOperator() -> String? {

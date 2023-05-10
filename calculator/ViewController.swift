@@ -21,24 +21,28 @@ class ViewController: UIViewController {
             plusButton.setTitle("+", for: .normal)
         }
     }
+    
     @IBOutlet weak var minusButton: OperatorButton!{
         didSet {
             minusButton.setTitle("-", for: .selected)
             minusButton.setTitle("-", for: .normal)
         }
     }
+    
     @IBOutlet weak var multipleButton: OperatorButton!{
         didSet{
             multipleButton.setTitle("×", for: .selected)
             multipleButton.setTitle("×", for: .normal)
         }
     }
+    
     @IBOutlet weak var devideButton: OperatorButton! {
         didSet {
             devideButton.setTitle("÷", for: .selected)
             devideButton.setTitle("÷", for: .normal)
         }
     }
+    
     @IBOutlet weak var equalButton: OperatorButton!
     
     @IBAction func claerButtonDidTap(_ sender: UIButton) {
@@ -53,6 +57,7 @@ class ViewController: UIViewController {
             clearOperator()
         }
     }
+    
     @IBAction func percentButtonDidTap(_ sender: UIButton) {
         if let currentOutput = outputLabel.text {
             if outputLabel.text != "0" {
@@ -60,6 +65,7 @@ class ViewController: UIViewController {
             }
         }
     }
+    
     @IBAction func pointButtonDidTap(_ sender: UIButton) {
         if let currentOutput = outputLabel.text {
             if !(currentOutput.contains(".")) {
@@ -67,8 +73,10 @@ class ViewController: UIViewController {
             }
         }
     }
+    
     @IBAction func negativeButtonDidTap(_ sender: UIButton) {
-        if let currentOutput = outputLabel.text{
+        
+        if let currentOutput = outputLabel.text {
             if !(currentOutput.contains("-")) {
                 outputLabel.text = "-" + currentOutput
             } else {
@@ -76,62 +84,57 @@ class ViewController: UIViewController {
             }
         }
     }
+    
     @IBAction func plusButtonDidTap(_ sender: UIButton) {
-        if let currentOutput = outputLabel.text {
-            if whichOperatorSelected() == nil {
-                calculatorModel.addElement(currentOutput)
-            }
-            if calculatorModel.numberOperator > 0 {
-                guard let preCalculation = calculatorModel.calaulateAll() else { return }
-                setOutputLabel(text: preCalculation)
-            }
+        
+        if whichOperatorSelected() == nil { calculatorModel.addElement()}
+        
+        if calculatorModel.numberOperator > 0 {
+            guard let preCalculation = calculatorModel.calaulateAll() else { return }
+            setOutputLabel(text: preCalculation)
         }
         clearOperator()
         sender.isSelected = true
     }
+    
     @IBAction func minusButtonDidTap(_ sender: UIButton) {
-        if let currentOutput = outputLabel.text {
-            if whichOperatorSelected() == nil {
-                calculatorModel.addElement(currentOutput)
-            }
-            if calculatorModel.numberOperator > 0 {
-                guard let preCalculation = calculatorModel.calaulateAll() else { return }
-                setOutputLabel(text: preCalculation)
-            }
+        
+        if whichOperatorSelected() == nil { calculatorModel.addElement()}
+        
+        if calculatorModel.numberOperator > 0 {
+            guard let preCalculation = calculatorModel.calaulateAll() else { return }
+            setOutputLabel(text: preCalculation)
         }
         clearOperator()
         sender.isSelected = true
     }
+    
     @IBAction func multipleButtonDidTap(_ sender: UIButton) {
-        if let currentOutput = outputLabel.text {
-            if whichOperatorSelected() == nil {
-                calculatorModel.addElement(currentOutput)
-            }
-            if calculatorModel.numberOperator > 0 {
-                if ["*", "/"].contains(calculatorModel.showOperator()){
-                    guard let preCalculation = calculatorModel.calaulateAll() else { return }
-                    setOutputLabel(text: preCalculation)
-                }
-            }
+        
+        if whichOperatorSelected() == nil { calculatorModel.addElement()}
+        
+        if calculatorModel.numberOperator > 0 && ["*", "/"].contains(calculatorModel.showOperator()) {
+            guard let preCalculation = calculatorModel.calaulateAll() else { return }
+            setOutputLabel(text: preCalculation)
         }
+
         clearOperator()
         sender.isSelected = true
     }
+    
     @IBAction func devideButtonDidTap(_ sender: UIButton) {
-        if let currentOutput = outputLabel.text {
-            if whichOperatorSelected() == nil {
-                calculatorModel.addElement(currentOutput)
-            }
-            if calculatorModel.numberOperator > 0 {
-                if ["*", "/"].contains(calculatorModel.showOperator()){
-                    guard let preCalculation = calculatorModel.calaulateAll() else { return }
-                    setOutputLabel(text: preCalculation)
-                }
-            }
+        
+        if whichOperatorSelected() == nil { calculatorModel.addElement()}
+        
+        if calculatorModel.numberOperator > 0 && ["*", "/"].contains(calculatorModel.showOperator()) {
+            guard let preCalculation = calculatorModel.calaulateAll() else { return }
+            setOutputLabel(text: preCalculation)
         }
+
         clearOperator()
         sender.isSelected = true
     }
+    
     @IBAction func equalButtonDidTap(_ sender: UIButton) {
         equalButton.isSelected = false
         if let currentOutput = outputLabel.text {
@@ -145,24 +148,15 @@ class ViewController: UIViewController {
             setOutputLabel(text: calculation)
         }
     }
+    
     @IBAction func numberButtonDidTap(_ sender: UIButton) {
-        if let currentOutput = outputLabel.text {
-            let number = String(sender.tag)
-            if let op = whichOperatorSelected() {
-                setOutputLabel(text: number)
-                calculatorModel.addElement(op)
-                clearOperator()
-            } else {
-                if outputLabel.text == "0" {
-                    outputLabel.text = number
-                } else if outputLabel.text == "-0" {
-                    outputLabel.text = "-\(number)"
-                } else {
-                    outputLabel.text = currentOutput + number
-                }
-            }
-            clearButton.setTitle("C", for: .normal)
-        }
+        let number = String(sender.tag)
+        calculatorModel.appendNumber(number)
+        
+        let currentOutput = calculatorModel.showNumber()
+        setOutputLabel(text: currentOutput)
+
+        clearButton.setTitle("C", for: .normal)
     }
     
     func clearOperator() {

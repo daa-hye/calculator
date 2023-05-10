@@ -32,10 +32,6 @@ struct Stack<T> {
     mutating func clearAll() {
         stack.removeAll()
     }
-    
-    mutating func duplicateStack() {
-        stackDuplicate = stack
-    }
         
     var count: Int {
         return stack.count
