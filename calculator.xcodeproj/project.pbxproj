@@ -20,6 +20,7 @@
 		53D806EB29C0326B002B02A2 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D806EA29C0326B002B02A2 /* NumberButton.swift */; };
 		53D806ED29C05540002B02A2 /* OperatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D806EC29C05540002B02A2 /* OperatorButton.swift */; };
 		53D806EF29C05A2E002B02A2 /* UtilityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D806EE29C05A2E002B02A2 /* UtilityButton.swift */; };
+		53FD081E2A1CD1A100390AEA /* CalculatorModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD081D2A1CD1A100390AEA /* CalculatorModel2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		53D806EA29C0326B002B02A2 /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
 		53D806EC29C05540002B02A2 /* OperatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorButton.swift; sourceTree = "<group>"; };
 		53D806EE29C05A2E002B02A2 /* UtilityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityButton.swift; sourceTree = "<group>"; };
+		53FD081D2A1CD1A100390AEA /* CalculatorModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				5332215A29DD45CF00746131 /* String+extention.swift */,
 				53D68E3C29C5D8F90058521B /* CalculatorModel.swift */,
 				53D806EA29C0326B002B02A2 /* NumberButton.swift */,
+				53FD081D2A1CD1A100390AEA /* CalculatorModel2.swift */,
 				53D806EC29C05540002B02A2 /* OperatorButton.swift */,
 				53D806EE29C05A2E002B02A2 /* UtilityButton.swift */,
 				5332215829DC0FB100746131 /* Stack.swift */,
@@ -161,6 +164,7 @@
 			files = (
 				53D806EF29C05A2E002B02A2 /* UtilityButton.swift in Sources */,
 				53D806ED29C05540002B02A2 /* OperatorButton.swift in Sources */,
+				53FD081E2A1CD1A100390AEA /* CalculatorModel2.swift in Sources */,
 				53D806D929C02CE8002B02A2 /* ViewController.swift in Sources */,
 				53D806D529C02CE8002B02A2 /* AppDelegate.swift in Sources */,
 				53D68E3F29C83BAD0058521B /* Double+extension.swift in Sources */,

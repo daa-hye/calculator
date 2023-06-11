@@ -9,41 +9,46 @@ import Foundation
 
 class CalculatorModel {
     
-    private var buffer = [String]()
+    private var numberBuffer = [String]()
+    private var operatorBuffer = [String]()
     private var numberStack = Stack<Double>()
     private var operatorStack = Stack<String>()
     
-    var operatorAdded: Bool = false
-    
     func appendNumber(_ element: String) {
-        buffer.append(element)
+        numberBuffer.append(element)
     }
     
-    func showNumber() -> String {
-        return buffer.reduce("", { $0.appending($1) })
+    func appendOperator(_ element: String) {
+        operatorBuffer.append(element)
+    }
+    
+    func showOutputLabel() -> String {
+        return numberBuffer.reduce("", { $0.appending($1) })
+    }
+    
+    func showNegative() -> String {
+        return ""
+    }
+    
+    func showPercent() -> String {
+        guard let show = Double(numberBuffer.reduce("", { $0.appending($1) })) else { return "" }
+        return String(show / 100.0)
     }
         
     func clearBuffer() {
-            buffer.removeAll()
+        numberBuffer.removeAll()
+        operatorBuffer.removeAll()
     }
     
-    func addElement() {
-        guard let element = Double(showNumber()) else { return }
-        numberStack.push(element)
-        operatorAdded = false
-        
+    func pushNumber() {
+        if let element = Double(showOutputLabel()){
+            numberStack.push(element)
+        }
     }
     
-    func addElement(_ element: String) {
-        operatorStack.push(element)
-        operatorAdded = true
-    }
-    
-    func showOperator() -> String? {
-        if let `operator` = operatorStack.lastElement() {
-            return `operator`
-        } else {
-            return nil
+    func pushOperator() {
+        if let element = numberBuffer.first {
+            operatorStack.push(element)
         }
     }
     
