@@ -36,27 +36,27 @@ class CalculatorModel2 {
     private var inputOperatorsBuffer: String = ""
     private var numberStack = Stack<Double>()
     private var operatorStack = Stack<String>()
-    
+
     private var newInputcheck = false
-    
-    //숫자 버퍼에 수 하나를 넣는 함수
+
+    // 숫자 버퍼에 수 하나를 넣는 함수
     func addNumberToInputBuffer(_ number: String) {
         inputNumbersBuffer.append(number)
     }
-    
-    //숫자 버퍼 마지막 수 삭제
+
+    // 숫자 버퍼 마지막 수 삭제
     func removeLastNumberInInputBuffer() {
         _ = inputNumbersBuffer.removeLast()
     }
-    
-    //숫자 버퍼에 있는 수 보여주기
+
+    // 숫자 버퍼에 있는 수 보여주기
     func showInputNumber() -> String {
         if inputNumbersBuffer == "" { return "0" }
         return inputNumbersBuffer
     }
-    
+
     // 숫자 버퍼 -> 숫자 스택
-    func addNumberToStack() {
+        func addNumberToStack() {
         if let numberBuffer = Double(inputNumbersBuffer) {
             numberStack.push(numberBuffer)
             inputNumbersBuffer.removeAll()
@@ -65,26 +65,26 @@ class CalculatorModel2 {
             inputNumbersBuffer.removeAll()
         }
     }
-    
-    //연산자 버퍼에 연산자 넣는 함수
+
+    // 연산자 버퍼에 연산자 넣는 함수
     func addOperatorToInputBuffer(_ operator: String) {
         if inputOperatorsBuffer == "" {
             addNumberToStack()
         }
         if let operatorInStack = operatorStack.lastElement() {
-            if operatorCompare(op1: operatorInStack, op2: `operator`) == true {
+            if operatorCompare(operator1: operatorInStack, operator2: `operator`) == true {
                 calculate()
             }
         }
         inputOperatorsBuffer = `operator`
     }
-    
+
     // 연산자 버퍼 -> 연산자 스택
     func addOperatorToStack() {
         operatorStack.push(inputOperatorsBuffer)
         inputOperatorsBuffer.removeAll()
     }
-    
+
     // +/- 부호 버튼
     func toggleSignOfInputBuffer() {
         if inputNumbersBuffer.first == "-" {
@@ -93,7 +93,7 @@ class CalculatorModel2 {
             inputNumbersBuffer.insert("-", at: inputNumbersBuffer.startIndex)
         }
     }
-    
+
     // 백분율
     func convertToPercentage() {
         if let numberBuffer = Double(inputNumbersBuffer) {
@@ -107,19 +107,19 @@ class CalculatorModel2 {
             // 퍼센트 연산 후 연산자가 아니라 수를 입력하면 퍼센트 연산한 결과를 버려야함
         }
     }
-    
-    //소수점
+
+    // 소수점
     func markDecimalPoint() {
         if inputNumbersBuffer.isEmpty {
             inputNumbersBuffer.append("0.")
         } else { inputNumbersBuffer.append(".") }
     }
-    
+
     // C
     func clear() {
         inputNumbersBuffer.removeAll()
     }
-    
+
     // AC
     func allClear() {
         inputNumbersBuffer.removeAll()
@@ -127,23 +127,22 @@ class CalculatorModel2 {
         numberStack.clearAll()
         operatorStack.clearAll()
     }
-    
+
     // 연산자 우선순위 계산
-    func operatorPriority(_ op: String) -> Int {
-        if op == "+" || op == "-" {
+    func operatorPriority(_ operator: String) -> Int {
+        if `operator` == "+" || `operator` == "-" {
             return 0
-        } else if op == "*" || op == "/" {
+        } else if `operator` == "*" || `operator` == "/" {
             return 1
-        }
-        else {
+        } else {
             return -1
         }
     }
-    
+
     // 연산자 우선순위 비교
-    func operatorCompare(op1: String, op2: String) -> Bool? {
-        let firstOp = operatorPriority(op1)
-        let secondOp = operatorPriority(op2)
+    func operatorCompare(operator1: String, operator2: String) -> Bool? {
+        let firstOp = operatorPriority(operator1)
+        let secondOp = operatorPriority(operator2)
         if firstOp >= secondOp {
             return false
         } else if firstOp < secondOp {
@@ -152,32 +151,32 @@ class CalculatorModel2 {
             return nil
         }
     }
-    
+
     // 연산
-    func operation(num1: Double, num2: Double, op: String) -> Double {
-        switch op {
-        case "+" :
+    func operation(num1: Double, num2: Double, operator: String) -> Double {
+        switch `operator` {
+        case "+":
             return num1 + num2
-        case "-" :
+        case "-":
             return num1 - num2
-        case "*" :
+        case "*":
             return num1 * num2
-        case "/" :
+        case "/":
             return num1 / num2
-        default :
+        default:
             return 0
         }
     }
-    
+
     // 계산
     func calculate() {
-        if let num2 = numberStack.pop(), let num1 = numberStack.pop(), let op = operatorStack.pop() {
-            let answer = operation(num1: num1, num2: num2, op: op)
+        if let num2 = numberStack.pop(), let num1 = numberStack.pop(), let `operator` = operatorStack.pop() {
+            let answer = operation(num1: num1, num2: num2, operator: `operator`)
             inputNumbersBuffer = String(answer)
             numberStack.push(answer)
         }
     }
-    
+
     // 모두 계산
     func calculateAll() {
         if operatorStack.count == 1 {
@@ -185,32 +184,30 @@ class CalculatorModel2 {
             numberStack.clearAll()
             return
         }
-        var numberList = Array<Double>()
-        var operatorList = Array<String>()
-        
+        var numberList = [Double]()
+        var operatorList = [String]()
+
         while !numberStack.isEmpty() {
             if let number = numberStack.pop() {
                 numberList.append(number)
             }
         }
-        
+
         while !operatorStack.isEmpty() {
             if let `operator` = operatorStack.pop() {
                 operatorList.append(`operator`)
             }
         }
-        
+
         var answer: Double
-        
-        if operatorCompare(op1: operatorList[0], op2: operatorList[1])! {
-            let temp = operation(num1: numberList[1], num2: numberList[2], op: operatorList[1])
-            answer = operation(num1: numberList[0], num2: temp, op: operatorList[0])
-        }
-        else {
-            let temp = operation(num1: numberList[0], num2: numberList[1], op: operatorList[0])
-            answer = operation(num1: temp, num2: numberList[2], op: operatorList[1])
+
+        if operatorCompare(operator1: operatorList[0], operator2: operatorList[1])! {
+            let temp = operation(num1: numberList[1], num2: numberList[2], operator: operatorList[1])
+            answer = operation(num1: numberList[0], num2: temp, operator: operatorList[0])
+        } else {
+            let temp = operation(num1: numberList[0], num2: numberList[1], operator: operatorList[0])
+            answer = operation(num1: temp, num2: numberList[2], operator: operatorList[1])
         }
         inputNumbersBuffer = String(answer)
     }
-    
 }

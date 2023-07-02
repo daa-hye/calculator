@@ -9,30 +9,30 @@ import Foundation
 struct Stack<T> {
     private var stack = [T]()
     private var stackDuplicate = [T]()
-    
+
     mutating func push(_ element: T) {
         stack.append(element)
     }
-    
+
     mutating func pop() -> T? {
         return stack.popLast()
     }
-    
+
     func lastElement() -> T? {
-        if let last = stack.last{
+        if let last = stack.last {
             return last
         }
         return nil
     }
-    
+
     func isEmpty() -> Bool {
         return stack.isEmpty
     }
-    
+
     mutating func clearAll() {
         stack.removeAll()
     }
-        
+
     var count: Int {
         return stack.count
     }

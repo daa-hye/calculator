@@ -9,13 +9,17 @@ import Foundation
 import UIKit
 
 class UtilityButton: UIButton {
-    
+
     override var isHighlighted: Bool {
         didSet {
-            backgroundColor = isHighlighted ? UIColor(red: 217.0/255.0, green: 217.0/255.0, blue: 217.0/255.0, alpha: 1) : UIColor(red: 165.0/255.0, green: 165.0/255.0, blue: 165.0/255.0, alpha: 1)
+            if isHighlighted {
+                backgroundColor = UIColor(red: 217.0/255.0, green: 217.0/255.0, blue: 217.0/255.0, alpha: 1)
+            } else {
+                backgroundColor = UIColor(red: 165.0/255.0, green: 165.0/255.0, blue: 165.0/255.0, alpha: 1)
+            }
         }
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         clipsToBounds = true
@@ -23,7 +27,7 @@ class UtilityButton: UIButton {
         setTitleColor(.black, for: .normal)
         titleLabel?.font = UIFont.systemFont(ofSize: 35)
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = frame.height / 2
