@@ -1,7 +1,0 @@
-disabled_rules:
-    - trailing_whitespace
-    - line_length
-
-excluded:
-  - calculator/AppDelegate.swift
-  - calculator/SceneDelegate.swift
